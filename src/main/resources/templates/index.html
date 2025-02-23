@@ -23,6 +23,7 @@
             <th>Publisher</th>
             <th>Description</th>
             <th>Price</th>
+            <th>Update</th>
         </tr>
 
         <tr th:each="book:${books}">
@@ -31,6 +32,7 @@
             <td th:text="${book.book_publisher}"></td>
             <td th:text="${book.book_description}"></td>
             <td th:text="${book.book_price}"></td>
+            <td><a th:href="@{/editbook/{book_id}(book_id=${book.book_id})}" class="btn btn-primary">Edit</a></td>
         </tr>
     </table>
 </div>

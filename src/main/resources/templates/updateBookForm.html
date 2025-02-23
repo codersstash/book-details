@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Details System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+<h1>Book Details System</h1>
+<nav class="navbar navbar-dark bg-primary">
+    <span>
+        <a th:href="@{/index}" class="navbar-brand">Home</a>
+        <a th:href="@{/addnewbook}" class="navbar-brand">New Book</a>
+        <a th:href="@{/}" class="navbar-brand">Edit Book</a>
+    </span>
+</nav>
+<div class="container col-4">
+  <h2>Edit Book</h2>
+  <form action="#" th:action="@{/saveBook}" th:object="${book}" method="post">
+    <input type="hidden" th:field="*{book_id}">
+    <input type="text" th:field="*{book_name}" placeholder="Book Name" class="form-control mb-4">
+    <input type="text" th:field="*{book_author}" placeholder="Author" class="form-control mb-4">
+    <input type="text" th:field="*{book_publisher}" placeholder="Publisher" class="form-control mb-4">
+    <input type="text" th:field="*{book_description}" placeholder="Description" class="form-control mb-4">
+    <input type="text" th:field="*{book_price}" placeholder="Price" class="form-control mb-4">
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+</body>
+
+</html>
