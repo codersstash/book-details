@@ -39,4 +39,9 @@ public class BookController {
         model.addAttribute("book", bookService.getBookById(book_id));
         return "updateBookForm";
     }
+    @GetMapping("/deletebook/{book_id}")
+    public String deleteBook(@PathVariable int book_id){
+        bookService.deleteBook(book_id);
+        return "redirect:/index";
+    }
 }
