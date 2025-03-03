@@ -12,7 +12,7 @@
     <span>
         <a th:href="@{/index}" class="navbar-brand">Home</a>
         <a th:href="@{/addnewbook}" class="navbar-brand">New Book</a>
-        <a th:href="@{/}" class="navbar-brand">Edit Book</a>
+        <a th:href="@{/printAllBookDetails}" class="navbar-brand">Print Book Details</a>
     </span>
 </nav>
 <div class="container">
@@ -25,6 +25,7 @@
             <th>Price</th>
             <th>Update</th>
             <th>Delete</th>
+            <th>Print</th>
         </tr>
 
         <tr th:each="book:${books}">
@@ -35,6 +36,7 @@
             <td th:text="${book.book_price}"></td>
             <td><a th:href="@{/editbook/{book_id}(book_id=${book.book_id})}" class="btn btn-primary">Edit</a></td>
             <td><a th:href="@{/deletebook/{book_id}(book_id=${book.book_id})}" class="btn btn-danger">Delete</a></td>
+            <td><a th:href="@{/printBookDetails/{book_id}(book_id=${book.book_id})}" class="btn btn-primary">Print</a></td>
         </tr>
     </table>
 </div>
